@@ -672,7 +672,7 @@ public class UserService {
         LOGGER.info("Starting Keycloak-first registration for user: {}", userCreateDTO.getEmail());
         
         // Step 1: Validate input
-        if (userCreateDTO == null || userCreateDTO.getEmail() == null || userCreateDTO.getUsername() == null) {
+        if (userCreateDTO.getEmail() == null || userCreateDTO.getUsername() == null) {
             return Uni.createFrom().item(Response.status(Response.Status.BAD_REQUEST)
                     .entity(Map.of("error", "User data, email, and username are required")).build());
         }

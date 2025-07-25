@@ -1,0 +1,34 @@
+# ===================================
+# MOBA Authorization - Environment Variables Setup
+# ===================================
+# Copy these environment variables and set them in your system
+# DO NOT include actual secrets in this file!
+
+# SendGrid Email Configuration
+export SENDGRID_API_KEY="SG.your-sendgrid-api-key-here"
+export SENDGRID_FROM_EMAIL="your-email@example.com"
+export SENDGRID_FROM_NAME="Your App Name"
+
+# SMTP Configuration (Alternative to SendGrid)
+export SMTP_USERNAME="your-smtp-username"
+export SMTP_PASSWORD="your-smtp-password"
+
+# Database Configuration
+export DB_USERNAME="postgres"
+export DB_PASSWORD="your-database-password"
+export DB_URL="jdbc:postgresql://localhost:5432/moba"
+
+# JWT Configuration
+export JWT_SECRET="your-very-secure-jwt-secret-key-here-at-least-256-bits"
+
+# Keycloak/OIDC Configuration
+export OIDC_SECRET="your-keycloak-client-secret-here"
+
+# ===================================
+# How to use:
+# ===================================
+# 1. Copy this file to your local machine
+# 2. Replace all placeholder values with actual secrets
+# 3. Run: source environment-config.local.txt
+# 4. Or add these to your IDE/system environment variables
+# 5. Never commit files with actual secret values! 

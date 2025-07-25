@@ -29,12 +29,13 @@ public interface KeycloakAdminClient {
     Uni<Response> getUserToken(@FormParam("username") String username, @FormParam("password") String password);
 
     @POST
-    @Path("/realms/moba/protocol/openid-connect/token")
+    @Path("/realms/master/protocol/openid-connect/token")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
-    @ClientFormParam(name = "client_id", value = "${quarkus.oidc.client-id}")
-    @ClientFormParam(name = "client_secret", value = "${quarkus.oidc.credentials.secret}")
-    @ClientFormParam(name = "grant_type", value = "client_credentials")
+    @ClientFormParam(name = "client_id", value = "admin-cli")
+    @ClientFormParam(name = "grant_type", value = "password")
+    @ClientFormParam(name = "username", value = "${keycloak.admin.username}")
+    @ClientFormParam(name = "password", value = "${keycloak.admin.password}")
     Uni<TokenModel> getAdminToken();
 
     @POST

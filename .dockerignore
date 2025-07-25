@@ -1,5 +1,37 @@
-*
+# Build artifacts that shouldn't be included
+target/
 !target/*-runner
 !target/*-runner.jar
 !target/lib/*
 !target/quarkus-app/*
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Git
+.git/
+.gitignore
+
+# Docker files (no need to copy these into the image)
+docker-compose.yml
+.dockerignore
+*.md
+
+# Environment files
+.env
+*.env
+environment-config.example.txt
+
+# Logs
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
